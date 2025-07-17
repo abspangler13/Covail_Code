@@ -1,0 +1,1544 @@
+**** Job starts ****
+Fri May 17 03:39:21 PM EDT 2024
+**** LOCUS info ****
+User: malekrj
+Job id: 
+Job name: 
+Hostname: ai-hpcn214
+/data/vrc_bsc/Rory/Covail/04_Analysis/code/01_build_seurat
+here() starts at /data/vrc_bsc/Rory/Covail
+Attaching SeuratObject
+Seurat v4 was just loaded with SeuratObject v5; disabling v5 assays and
+validation routines, and ensuring assays work in strict v3/v4
+compatibility mode
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+Attaching package: ‘gridExtra’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+========================================
+tidyseurat version 0.8.0
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following object is masked from ‘package:ttservice’:
+
+    plot_ly
+
+Loading required package: SingleCellExperiment
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following object is masked from ‘package:dplyr’:
+
+    count
+
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following object is masked from ‘package:gridExtra’:
+
+    combine
+
+The following objects are masked from ‘package:lubridate’:
+
+    intersect, setdiff, union
+
+The following objects are masked from ‘package:dplyr’:
+
+    combine, intersect, setdiff, union
+
+The following object is masked from ‘package:SeuratObject’:
+
+    intersect
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:lubridate’:
+
+    second, second<-
+
+The following objects are masked from ‘package:dplyr’:
+
+    first, rename
+
+The following object is masked from ‘package:tidyr’:
+
+    expand
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+
+Attaching package: ‘IRanges’
+
+The following object is masked from ‘package:lubridate’:
+
+    %within%
+
+The following objects are masked from ‘package:dplyr’:
+
+    collapse, desc, slice
+
+The following object is masked from ‘package:purrr’:
+
+    reduce
+
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘SummarizedExperiment’
+
+The following object is masked from ‘package:SeuratObject’:
+
+    Assays
+
+The following object is masked from ‘package:Seurat’:
+
+    Assays
+
+Tidyseurat version:0.8.0
+There were 38 warnings (use warnings() to see them)
+Starting sample COV_09_13_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 523787 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 1297 in filtered matrix.
+522490 empty droplets according to CellRanger
+HTO assay dim 6 523787
+Probes assay dim 4 523787
+Prot assay dim 54 523787
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_13_2023_P1      NaN 0.35265     5.30595    13.2838   20000
+Dropped 19952 Cells ( 99.7600 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 1443
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_13_2023_P1 6.617384 67.26819    1868.945    5369.71    1443
+Dropped 151 Cells ( 10.4643 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0999
+Picking joint bandwidth of 0.0659
+Picking joint bandwidth of 0.0704
+Picking joint bandwidth of 0.0872
+Picking joint bandwidth of 0.0285
+Picking joint bandwidth of 0.0437
+Frequency of each hashtag identity including doublets and negatives
+1:21c(20, 2, 3, 2, 122, 2, 6, 6, 6, 285, 4, 7, 11, 159, 1, 5, 3, 352, 4, 290, 2)
+Starting sample COV_09_19_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 625404 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 3313 in filtered matrix.
+622091 empty droplets according to CellRanger
+HTO assay dim 8 625404
+Probes assay dim 4 625404
+Prot assay dim 54 625404
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_19_2023_P1      NaN 0.61005    12.09755   34.08765   20000
+Dropped 19898 Cells ( 99.4900 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 3792
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_19_2023_P1 7.409642 66.0058    1957.265   5766.301    3792
+Dropped 483 Cells ( 12.7373 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0877
+Picking joint bandwidth of 0.0579
+Picking joint bandwidth of 0.109
+Picking joint bandwidth of 0.068
+Picking joint bandwidth of 0.0588
+Picking joint bandwidth of 0.0684
+Picking joint bandwidth of 0.0809
+Picking joint bandwidth of 0.0698
+Frequency of each hashtag identity including doublets and negatives
+1:36c(198, 7, 12, 5, 13, 7, 7, 324, 21, 15, 23, 28, 26, 35, 418, 18, 14, 14, 13, 8, 439, 14, 14, 19, 10, 399, 14, 15, 9, 361, 20, 19, 490, 9, 257, 14)
+Starting sample COV_09_19_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 679130 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 4724 in filtered matrix.
+674406 empty droplets according to CellRanger
+HTO assay dim 8 679130
+Probes assay dim 4 679130
+Prot assay dim 54 679130
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_19_2023_P2      NaN 1.1191    16.82765    47.4245   20000
+Dropped 19859 Cells ( 99.2950 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 5589
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_19_2023_P2 6.782393 63.93577    1758.064   5114.432    5589
+Dropped 956 Cells ( 17.1050 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0565
+Picking joint bandwidth of 0.0692
+Picking joint bandwidth of 0.0622
+Picking joint bandwidth of 0.0865
+Picking joint bandwidth of 0.0745
+Picking joint bandwidth of 0.067
+Picking joint bandwidth of 0.0582
+Picking joint bandwidth of 0.0554
+Frequency of each hashtag identity including doublets and negatives
+1:45c(942, 1, 16, 10, 11, 6, 12, 14, 15, 449, 5, 18, 15, 15, 33, 23, 21, 471, 4, 10, 25, 27, 16, 20, 620, 5, 14, 23, 8, 10, 391, 6, 29, 27, 15, 317, 16, 29, 27, 383, 10, 25, 268, 9, 222)
+Starting sample COV_09_19_2023_P3
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 633006 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 4270 in filtered matrix.
+628736 empty droplets according to CellRanger
+HTO assay dim 7 633006
+Probes assay dim 4 633006
+Prot assay dim 54 633006
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_19_2023_P3      NaN 0.69085    13.93675   36.42795   20000
+Dropped 19864 Cells ( 99.3200 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 4766
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_19_2023_P3 5.600622 68.8397    1917.143   5413.781    4766
+Dropped 319 Cells ( 6.6932 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0645
+Picking joint bandwidth of 0.0887
+Picking joint bandwidth of 0.0558
+Picking joint bandwidth of 0.114
+Picking joint bandwidth of 0.102
+Picking joint bandwidth of 0.0434
+Picking joint bandwidth of 0.0931
+Frequency of each hashtag identity including doublets and negatives
+1:36c(513, 7, 21, 17, 14, 21, 18, 31, 1054, 3, 13, 11, 11, 20, 29, 650, 5, 10, 24, 25, 26, 554, 8, 8, 17, 29, 161, 6, 18, 24, 867, 8, 36, 150, 12, 26)
+Starting sample COV_09_20_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 658765 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 3717 in filtered matrix.
+655048 empty droplets according to CellRanger
+HTO assay dim 8 658765
+Probes assay dim 4 658765
+Prot assay dim 54 658765
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_20_2023_P1      NaN 0.6765    13.28955    39.3716   20000
+Dropped 19882 Cells ( 99.4100 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 4319
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_20_2023_P1 6.295355 67.54295    1879.465   5746.364    4319
+Dropped 484 Cells ( 11.2063 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0903
+Picking joint bandwidth of 0.0803
+Picking joint bandwidth of 0.115
+Picking joint bandwidth of 0.0928
+Picking joint bandwidth of 0.0559
+Picking joint bandwidth of 0.061
+Picking joint bandwidth of 0.0438
+Picking joint bandwidth of 0.0578
+Frequency of each hashtag identity including doublets and negatives
+1:44c(173, 4, 32, 15, 11, 14, 14, 8, 12, 396, 7, 27, 29, 25, 19, 9, 18, 185, 7, 11, 17, 24, 2, 16, 155, 7, 10, 15, 4, 17, 423, 13, 12, 6, 14, 510, 7, 10, 15, 951, 4, 454, 3, 130)
+Starting sample COV_09_20_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 690331 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 5398 in filtered matrix.
+684933 empty droplets according to CellRanger
+HTO assay dim 8 690331
+Probes assay dim 4 690331
+Prot assay dim 54 690331
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_20_2023_P2      NaN 0.80625    18.01995    48.1671   20000
+Dropped 19843 Cells ( 99.2150 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 6038
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_20_2023_P2 6.169181 66.5414    1902.717   5217.813    6038
+Dropped 640 Cells ( 10.5995 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0651
+Picking joint bandwidth of 0.07
+Picking joint bandwidth of 0.0599
+Picking joint bandwidth of 0.0771
+Picking joint bandwidth of 0.0647
+Picking joint bandwidth of 0.0727
+Picking joint bandwidth of 0.0858
+Picking joint bandwidth of 0.0882
+Frequency of each hashtag identity including doublets and negatives
+1:45c(468, 13, 35, 24, 19, 31, 38, 20, 28, 423, 21, 38, 11, 30, 42, 16, 19, 616, 5, 12, 14, 32, 18, 16, 734, 4, 15, 22, 12, 9, 569, 10, 27, 17, 14, 414, 21, 27, 20, 758, 10, 16, 608, 3, 99)
+Starting sample COV_09_20_2023_P3
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 601837 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 2764 in filtered matrix.
+599073 empty droplets according to CellRanger
+HTO assay dim 6 601837
+Probes assay dim 4 601837
+Prot assay dim 54 601837
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_20_2023_P3      NaN 0.5235     11.8665    31.7533   20000
+Dropped 19904 Cells ( 99.5200 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 3154
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_20_2023_P3 5.621549 67.35225     1947.27   5398.916    3154
+Dropped 307 Cells ( 9.7337 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.109
+Picking joint bandwidth of 0.0387
+Picking joint bandwidth of 0.0898
+Picking joint bandwidth of 0.0865
+Picking joint bandwidth of 0.0707
+Picking joint bandwidth of 0.118
+Frequency of each hashtag identity including doublets and negatives
+1:27c(197, 11, 23, 19, 13, 19, 11, 720, 4, 20, 4, 9, 16, 299, 14, 4, 13, 18, 726, 6, 5, 492, 8, 19, 106, 4, 67)
+Starting sample COV_09_21_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 681262 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 4111 in filtered matrix.
+677151 empty droplets according to CellRanger
+HTO assay dim 8 681262
+Probes assay dim 4 681262
+Prot assay dim 54 681262
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_21_2023_P1      NaN 0.71265    12.86665    34.7076   20000
+Dropped 19864 Cells ( 99.3200 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 5448
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_21_2023_P1 6.934444 62.79974    1494.516   4285.949    5448
+Dropped 1031 Cells ( 18.9244 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0546
+Picking joint bandwidth of 0.0654
+Picking joint bandwidth of 0.061
+Picking joint bandwidth of 0.0766
+Picking joint bandwidth of 0.0804
+Picking joint bandwidth of 0.0755
+Picking joint bandwidth of 0.0863
+Picking joint bandwidth of 0.0977
+Frequency of each hashtag identity including doublets and negatives
+1:44c(730, 40, 33, 22, 13, 28, 12, 7, 691, 1, 26, 30, 12, 20, 11, 11, 513, 3, 21, 21, 19, 11, 15, 498, 2, 15, 26, 12, 6, 353, 2, 13, 10, 5, 465, 1, 12, 20, 254, 3, 6, 146, 2, 276)
+Starting sample COV_09_21_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 694053 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 5772 in filtered matrix.
+688281 empty droplets according to CellRanger
+HTO assay dim 8 694053
+Probes assay dim 4 694053
+Prot assay dim 54 694053
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_21_2023_P2      NaN 0.84965     17.0436   49.00255   20000
+Dropped 19830 Cells ( 99.1500 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 6468
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_21_2023_P2 6.242134 67.33101    1728.877    5109.31    6468
+Dropped 657 Cells ( 10.1577 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.1
+Picking joint bandwidth of 0.0643
+Picking joint bandwidth of 0.0798
+Picking joint bandwidth of 0.0824
+Picking joint bandwidth of 0.0601
+Picking joint bandwidth of 0.0482
+Picking joint bandwidth of 0.0582
+Picking joint bandwidth of 0.0617
+Frequency of each hashtag identity including doublets and negatives
+1:44c(241, 6, 26, 25, 14, 20, 16, 4, 11, 503, 15, 38, 23, 23, 24, 15, 12, 224, 6, 18, 29, 23, 15, 19, 325, 5, 16, 21, 13, 16, 669, 2, 14, 14, 13, 892, 5, 16, 19, 1297, 13, 1002, 3, 106)
+Starting sample COV_09_26_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 664034 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 3974 in filtered matrix.
+660060 empty droplets according to CellRanger
+HTO assay dim 8 664034
+Probes assay dim 4 664034
+Prot assay dim 54 664034
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_26_2023_P1      NaN 0.6693    13.25495    37.1657   20000
+Dropped 19872 Cells ( 99.3600 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 4384
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_26_2023_P1 6.780664 66.4375    1779.445   5243.023    4384
+Dropped 456 Cells ( 10.4015 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0403
+Picking joint bandwidth of 0.0959
+Picking joint bandwidth of 0.101
+Picking joint bandwidth of 0.0934
+Picking joint bandwidth of 0.0571
+Picking joint bandwidth of 0.0649
+Picking joint bandwidth of 0.0709
+Picking joint bandwidth of 0.0599
+Frequency of each hashtag identity including doublets and negatives
+1:45c(61, 2, 10, 6, 3, 13, 13, 7, 6, 260, 12, 23, 15, 28, 29, 13, 13, 149, 7, 8, 28, 22, 15, 2, 273, 6, 17, 18, 6, 5, 343, 9, 27, 9, 8, 234, 16, 13, 11, 839, 2, 14, 1266, 1, 66)
+Starting sample COV_09_26_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 674668 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 4499 in filtered matrix.
+670169 empty droplets according to CellRanger
+HTO assay dim 8 674668
+Probes assay dim 4 674668
+Prot assay dim 54 674668
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_26_2023_P2      NaN 0.63245     12.2384    35.3419   20000
+Dropped 19868 Cells ( 99.3400 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 5196
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_26_2023_P2 5.380439 67.00346    1621.753   4893.756    5196
+Dropped 567 Cells ( 10.9122 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0631
+Picking joint bandwidth of 0.0904
+Picking joint bandwidth of 0.0514
+Picking joint bandwidth of 0.0921
+Picking joint bandwidth of 0.0827
+Picking joint bandwidth of 0.0716
+Picking joint bandwidth of 0.064
+Picking joint bandwidth of 0.0614
+Frequency of each hashtag identity including doublets and negatives
+1:44c(534, 6, 17, 18, 15, 22, 14, 9, 5, 653, 6, 19, 15, 21, 19, 11, 15, 505, 4, 9, 23, 18, 16, 17, 334, 7, 27, 33, 13, 14, 316, 8, 19, 10, 15, 370, 13, 22, 14, 675, 7, 688, 1, 52)
+Starting sample COV_09_27_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 700196 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 5286 in filtered matrix.
+694910 empty droplets according to CellRanger
+HTO assay dim 8 700196
+Probes assay dim 4 700196
+Prot assay dim 54 700196
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_27_2023_P1      NaN 0.8287    14.98245   44.48625   20000
+Dropped 19855 Cells ( 99.2750 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 5693
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_27_2023_P1 8.009497 69.14667    1832.207   5516.449    5693
+Dropped 405 Cells ( 7.1140 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0617
+Picking joint bandwidth of 0.0728
+Picking joint bandwidth of 0.0808
+Picking joint bandwidth of 0.0787
+Picking joint bandwidth of 0.0492
+Picking joint bandwidth of 0.0581
+Picking joint bandwidth of 0.0751
+Picking joint bandwidth of 0.0528
+Frequency of each hashtag identity including doublets and negatives
+1:43c(268, 4, 9, 18, 9, 11, 15, 7, 14, 289, 7, 12, 18, 10, 19, 10, 7, 617, 8, 23, 12, 24, 12, 24, 400, 6, 16, 28, 14, 20, 788, 4, 14, 20, 8, 593, 6, 7, 10, 1054, 13, 828, 12)
+Starting sample COV_09_27_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 705766 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 5359 in filtered matrix.
+700407 empty droplets according to CellRanger
+HTO assay dim 8 705766
+Probes assay dim 4 705766
+Prot assay dim 54 705766
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_27_2023_P2      NaN 0.79765    14.44425     41.702   20000
+Dropped 19855 Cells ( 99.2750 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 5719
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_09_27_2023_P2  6.98281 67.7239    1620.133   4638.393    5719
+Dropped 498 Cells ( 8.7078 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0945
+Picking joint bandwidth of 0.125
+Picking joint bandwidth of 0.082
+Picking joint bandwidth of 0.0761
+Picking joint bandwidth of 0.0419
+Picking joint bandwidth of 0.0529
+Picking joint bandwidth of 0.0426
+Picking joint bandwidth of 0.0807
+Frequency of each hashtag identity including doublets and negatives
+1:43c(176, 2, 8, 6, 6, 9, 10, 6, 3, 695, 3, 25, 20, 13, 28, 26, 21, 398, 15, 9, 20, 14, 12, 374, 1, 8, 16, 9, 11, 848, 22, 23, 15, 704, 2, 17, 26, 795, 2, 24, 792, 1, 6)
+Starting sample COV_09_28_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 711610 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 3615 in filtered matrix.
+707995 empty droplets according to CellRanger
+HTO assay dim 8 711610
+Probes assay dim 4 711610
+Prot assay dim 54 711610
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_28_2023_P1      NaN 0.6017     11.9494   36.33905   20000
+Dropped 19893 Cells ( 99.4650 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 4328
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_28_2023_P1 7.474407 66.45541    1818.633   5750.349    4328
+Dropped 579 Cells ( 13.3780 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.066
+Picking joint bandwidth of 0.0647
+Picking joint bandwidth of 0.0862
+Picking joint bandwidth of 0.068
+Picking joint bandwidth of 0.05
+Picking joint bandwidth of 0.0572
+Picking joint bandwidth of 0.0516
+Picking joint bandwidth of 0.0898
+Frequency of each hashtag identity including doublets and negatives
+1:45c(238, 5, 37, 16, 37, 12, 18, 4, 10, 427, 4, 37, 48, 19, 17, 18, 21, 414, 1, 23, 9, 9, 2, 13, 261, 2, 12, 14, 10, 12, 405, 4, 7, 3, 9, 485, 1, 5, 14, 541, 1, 6, 495, 1, 22)
+Starting sample COV_09_28_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 718246 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 4945 in filtered matrix.
+713301 empty droplets according to CellRanger
+HTO assay dim 8 718246
+Probes assay dim 4 718246
+Prot assay dim 54 718246
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_28_2023_P2      NaN 0.7849    18.33635    57.4209   20000
+Dropped 19836 Cells ( 99.1800 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 5882
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_28_2023_P2 6.729626 66.20044    1906.154   5994.333    5882
+Dropped 688 Cells ( 11.6967 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0891
+Picking joint bandwidth of 0.0664
+Picking joint bandwidth of 0.0595
+Picking joint bandwidth of 0.117
+Picking joint bandwidth of 0.0953
+Picking joint bandwidth of 0.0467
+Picking joint bandwidth of 0.0658
+Picking joint bandwidth of 0.0919
+Frequency of each hashtag identity including doublets and negatives
+1:44c(640, 2, 22, 16, 22, 14, 16, 25, 18, 765, 25, 19, 22, 38, 13, 13, 622, 1, 15, 22, 42, 23, 10, 598, 2, 14, 26, 15, 14, 433, 4, 21, 18, 16, 772, 3, 21, 34, 445, 7, 14, 304, 5, 23)
+Starting sample COV_09_28_2023_P3
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 400819 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 1110 in filtered matrix.
+399709 empty droplets according to CellRanger
+HTO assay dim 5 400819
+Probes assay dim 4 400819
+Prot assay dim 54 400819
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_09_28_2023_P3      NaN 0.4177     6.60165    18.0556   20000
+Dropped 19936 Cells ( 99.6800 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 1336
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_09_28_2023_P3 6.765329 63.99251    1511.947   4593.157    1336
+Dropped 221 Cells ( 16.5419 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0451
+Picking joint bandwidth of 0.0586
+Picking joint bandwidth of 0.139
+Picking joint bandwidth of 0.0668
+Picking joint bandwidth of 0.132
+Frequency of each hashtag identity including doublets and negatives
+1:21c(179, 10, 7, 10, 7, 5, 239, 3, 1, 5, 6, 180, 1, 6, 3, 226, 1, 11, 211, 1, 3)
+Starting sample COV_10_05_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 588364 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 2509 in filtered matrix.
+585855 empty droplets according to CellRanger
+HTO assay dim 4 588364
+Probes assay dim 4 588364
+Prot assay dim 54 588364
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_10_05_2023_P1      NaN 0.40325     7.91445    20.2179   20000
+Dropped 19908 Cells ( 99.5400 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 2793
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_10_05_2023_P1  6.71178 66.4053    1562.595   4153.358    2793
+Dropped 240 Cells ( 8.5929 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.107
+Picking joint bandwidth of 0.0904
+Picking joint bandwidth of 0.0839
+Picking joint bandwidth of 0.0943
+Frequency of each hashtag identity including doublets and negatives
+1:15c(593, 13, 15, 22, 20, 499, 20, 37, 30, 639, 6, 29, 585, 7, 38)
+Starting sample COV_10_06_2023_P1
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 505839 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 1706 in filtered matrix.
+504133 empty droplets according to CellRanger
+HTO assay dim 4 505839
+Probes assay dim 4 505839
+Prot assay dim 54 505839
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito  avg hk avg # genes avg counts # cells
+COV_10_06_2023_P1      NaN 0.72365     9.64125    26.0804   20000
+Dropped 19922 Cells ( 99.6100 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 1998
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_10_06_2023_P1 5.898402 66.83784    1896.321   5670.899    1998
+Dropped 265 Cells ( 13.2633 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.0784
+Picking joint bandwidth of 0.0505
+Picking joint bandwidth of 0.071
+Picking joint bandwidth of 0.0523
+Frequency of each hashtag identity including doublets and negatives
+1:14c(170, 19, 39, 12, 36, 340, 23, 30, 41, 675, 17, 292, 17, 22)
+Starting sample COV_10_06_2023_P2
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 718894 in raw matrix.
+10X data contains more than one type and is being returned as a list containing matrices of each type.
+genes = 38606, cell barcodes = 7750 in filtered matrix.
+711144 empty droplets according to CellRanger
+HTO assay dim 8 718894
+Probes assay dim 4 718894
+Prot assay dim 54 718894
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+                  avg mito avg hk avg # genes avg counts # cells
+COV_10_06_2023_P2      NaN 1.2544    25.35105   67.98915   20000
+Dropped 19755 Cells ( 98.7750 % )
+NumCells after dropping cells with less than 50 and more the 5000 UMIs = 9966
+                  avg mito   avg hk avg # genes avg counts # cells
+COV_10_06_2023_P2 6.206922 63.60435    1653.524   4704.311    9966
+Dropped 1693 Cells ( 16.9878 % )
+Normalizing across features
+Making some plots
+Picking joint bandwidth of 0.076
+Picking joint bandwidth of 0.0767
+Picking joint bandwidth of 0.0919
+Picking joint bandwidth of 0.0807
+Picking joint bandwidth of 0.0632
+Picking joint bandwidth of 0.0679
+Picking joint bandwidth of 0.0621
+Picking joint bandwidth of 0.0673
+Frequency of each hashtag identity including doublets and negatives
+1:45c(594, 13, 44, 43, 50, 24, 44, 33, 34, 845, 18, 56, 39, 58, 49, 36, 46, 388, 20, 40, 41, 62, 31, 52, 1005, 7, 46, 44, 42, 32, 691, 15, 43, 30, 46, 669, 22, 29, 65, 1503, 6, 38, 942, 7, 331)
+There were 50 or more warnings (use warnings() to see the first 50)
+[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+[[10]]
+NULL
+
+[[11]]
+NULL
+
+[[12]]
+NULL
+
+[[13]]
+NULL
+
+[[14]]
+NULL
+
+[[15]]
+NULL
+
+[[16]]
+NULL
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+
+[[19]]
+NULL
+
+pdf 
+  2 
+[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+[[10]]
+NULL
+
+[[11]]
+NULL
+
+[[12]]
+NULL
+
+[[13]]
+NULL
+
+[[14]]
+NULL
+
+[[15]]
+NULL
+
+[[16]]
+NULL
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+
+[[19]]
+NULL
+
+pdf 
+  2 
+pdf 
+  2 
+[[1]]
+
+[[2]]
+
+[[3]]
+
+[[4]]
+
+[[5]]
+
+[[6]]
+
+[[7]]
+
+[[8]]
+
+[[9]]
+
+[[10]]
+
+[[11]]
+
+[[12]]
+
+[[13]]
+
+[[14]]
+
+[[15]]
+
+[[16]]
+
+[[17]]
+
+[[18]]
+
+[[19]]
+
+pdf 
+  2 
+Picking joint bandwidth of 0.0999
+Picking joint bandwidth of 0.0659
+Picking joint bandwidth of 0.0704
+Picking joint bandwidth of 0.0872
+Picking joint bandwidth of 0.0285
+Picking joint bandwidth of 0.0437
+Picking joint bandwidth of 0.0877
+Picking joint bandwidth of 0.0579
+Picking joint bandwidth of 0.109
+Picking joint bandwidth of 0.068
+Picking joint bandwidth of 0.0588
+Picking joint bandwidth of 0.0684
+Picking joint bandwidth of 0.0809
+Picking joint bandwidth of 0.0698
+Picking joint bandwidth of 0.0565
+Picking joint bandwidth of 0.0692
+Picking joint bandwidth of 0.0622
+Picking joint bandwidth of 0.0865
+Picking joint bandwidth of 0.0745
+Picking joint bandwidth of 0.067
+Picking joint bandwidth of 0.0582
+Picking joint bandwidth of 0.0554
+Picking joint bandwidth of 0.0645
+Picking joint bandwidth of 0.0887
+Picking joint bandwidth of 0.0558
+Picking joint bandwidth of 0.114
+Picking joint bandwidth of 0.102
+Picking joint bandwidth of 0.0434
+Picking joint bandwidth of 0.0931
+Picking joint bandwidth of 0.0903
+Picking joint bandwidth of 0.0803
+Picking joint bandwidth of 0.115
+Picking joint bandwidth of 0.0928
+Picking joint bandwidth of 0.0559
+Picking joint bandwidth of 0.061
+Picking joint bandwidth of 0.0438
+Picking joint bandwidth of 0.0578
+Picking joint bandwidth of 0.0651
+Picking joint bandwidth of 0.07
+Picking joint bandwidth of 0.0599
+Picking joint bandwidth of 0.0771
+Picking joint bandwidth of 0.0647
+Picking joint bandwidth of 0.0727
+Picking joint bandwidth of 0.0858
+Picking joint bandwidth of 0.0882
+Picking joint bandwidth of 0.109
+Picking joint bandwidth of 0.0387
+Picking joint bandwidth of 0.0898
+Picking joint bandwidth of 0.0865
+Picking joint bandwidth of 0.0707
+Picking joint bandwidth of 0.118
+Picking joint bandwidth of 0.0546
+Picking joint bandwidth of 0.0654
+Picking joint bandwidth of 0.061
+Picking joint bandwidth of 0.0766
+Picking joint bandwidth of 0.0804
+Picking joint bandwidth of 0.0755
+Picking joint bandwidth of 0.0863
+Picking joint bandwidth of 0.0977
+Picking joint bandwidth of 0.1
+Picking joint bandwidth of 0.0643
+Picking joint bandwidth of 0.0798
+Picking joint bandwidth of 0.0824
+Picking joint bandwidth of 0.0601
+Picking joint bandwidth of 0.0482
+Picking joint bandwidth of 0.0582
+Picking joint bandwidth of 0.0617
+Picking joint bandwidth of 0.0403
+Picking joint bandwidth of 0.0959
+Picking joint bandwidth of 0.101
+Picking joint bandwidth of 0.0934
+Picking joint bandwidth of 0.0571
+Picking joint bandwidth of 0.0649
+Picking joint bandwidth of 0.0709
+Picking joint bandwidth of 0.0599
+Picking joint bandwidth of 0.0631
+Picking joint bandwidth of 0.0904
+Picking joint bandwidth of 0.0514
+Picking joint bandwidth of 0.0921
+Picking joint bandwidth of 0.0827
+Picking joint bandwidth of 0.0716
+Picking joint bandwidth of 0.064
+Picking joint bandwidth of 0.0614
+Picking joint bandwidth of 0.0617
+Picking joint bandwidth of 0.0728
+Picking joint bandwidth of 0.0808
+Picking joint bandwidth of 0.0787
+Picking joint bandwidth of 0.0492
+Picking joint bandwidth of 0.0581
+Picking joint bandwidth of 0.0751
+Picking joint bandwidth of 0.0528
+Picking joint bandwidth of 0.0945
+Picking joint bandwidth of 0.125
+Picking joint bandwidth of 0.082
+Picking joint bandwidth of 0.0761
+Picking joint bandwidth of 0.0419
+Picking joint bandwidth of 0.0529
+Picking joint bandwidth of 0.0426
+Picking joint bandwidth of 0.0807
+Picking joint bandwidth of 0.066
+Picking joint bandwidth of 0.0647
+Picking joint bandwidth of 0.0862
+Picking joint bandwidth of 0.068
+Picking joint bandwidth of 0.05
+Picking joint bandwidth of 0.0572
+Picking joint bandwidth of 0.0516
+Picking joint bandwidth of 0.0898
+Picking joint bandwidth of 0.0891
+Picking joint bandwidth of 0.0664
+Picking joint bandwidth of 0.0595
+Picking joint bandwidth of 0.117
+Picking joint bandwidth of 0.0953
+Picking joint bandwidth of 0.0467
+Picking joint bandwidth of 0.0658
+Picking joint bandwidth of 0.0919
+Picking joint bandwidth of 0.0451
+Picking joint bandwidth of 0.0586
+Picking joint bandwidth of 0.139
+Picking joint bandwidth of 0.0668
+Picking joint bandwidth of 0.132
+Picking joint bandwidth of 0.107
+Picking joint bandwidth of 0.0904
+Picking joint bandwidth of 0.0839
+Picking joint bandwidth of 0.0943
+Picking joint bandwidth of 0.0784
+Picking joint bandwidth of 0.0505
+Picking joint bandwidth of 0.071
+Picking joint bandwidth of 0.0523
+Picking joint bandwidth of 0.076
+Picking joint bandwidth of 0.0767
+Picking joint bandwidth of 0.0919
+Picking joint bandwidth of 0.0807
+Picking joint bandwidth of 0.0632
+Picking joint bandwidth of 0.0679
+Picking joint bandwidth of 0.0621
+Picking joint bandwidth of 0.0673
+[[1]]
+Picking joint bandwidth of 0.0999
+Picking joint bandwidth of 0.0659
+Picking joint bandwidth of 0.0704
+Picking joint bandwidth of 0.0872
+Picking joint bandwidth of 0.0285
+Picking joint bandwidth of 0.0437
+
+[[2]]
+Picking joint bandwidth of 0.0877
+Picking joint bandwidth of 0.0579
+Picking joint bandwidth of 0.109
+Picking joint bandwidth of 0.068
+Picking joint bandwidth of 0.0588
+Picking joint bandwidth of 0.0684
+Picking joint bandwidth of 0.0809
+Picking joint bandwidth of 0.0698
+
+[[3]]
+Picking joint bandwidth of 0.0565
+Picking joint bandwidth of 0.0692
+Picking joint bandwidth of 0.0622
+Picking joint bandwidth of 0.0865
+Picking joint bandwidth of 0.0745
+Picking joint bandwidth of 0.067
+Picking joint bandwidth of 0.0582
+Picking joint bandwidth of 0.0554
+
+[[4]]
+Picking joint bandwidth of 0.0645
+Picking joint bandwidth of 0.0887
+Picking joint bandwidth of 0.0558
+Picking joint bandwidth of 0.114
+Picking joint bandwidth of 0.102
+Picking joint bandwidth of 0.0434
+Picking joint bandwidth of 0.0931
+
+[[5]]
+Picking joint bandwidth of 0.0903
+Picking joint bandwidth of 0.0803
+Picking joint bandwidth of 0.115
+Picking joint bandwidth of 0.0928
+Picking joint bandwidth of 0.0559
+Picking joint bandwidth of 0.061
+Picking joint bandwidth of 0.0438
+Picking joint bandwidth of 0.0578
+
+[[6]]
+Picking joint bandwidth of 0.0651
+Picking joint bandwidth of 0.07
+Picking joint bandwidth of 0.0599
+Picking joint bandwidth of 0.0771
+Picking joint bandwidth of 0.0647
+Picking joint bandwidth of 0.0727
+Picking joint bandwidth of 0.0858
+Picking joint bandwidth of 0.0882
+
+[[7]]
+Picking joint bandwidth of 0.109
+Picking joint bandwidth of 0.0387
+Picking joint bandwidth of 0.0898
+Picking joint bandwidth of 0.0865
+Picking joint bandwidth of 0.0707
+Picking joint bandwidth of 0.118
+
+[[8]]
+Picking joint bandwidth of 0.0546
+Picking joint bandwidth of 0.0654
+Picking joint bandwidth of 0.061
+Picking joint bandwidth of 0.0766
+Picking joint bandwidth of 0.0804
+Picking joint bandwidth of 0.0755
+Picking joint bandwidth of 0.0863
+Picking joint bandwidth of 0.0977
+
+[[9]]
+Picking joint bandwidth of 0.1
+Picking joint bandwidth of 0.0643
+Picking joint bandwidth of 0.0798
+Picking joint bandwidth of 0.0824
+Picking joint bandwidth of 0.0601
+Picking joint bandwidth of 0.0482
+Picking joint bandwidth of 0.0582
+Picking joint bandwidth of 0.0617
+
+[[10]]
+Picking joint bandwidth of 0.0403
+Picking joint bandwidth of 0.0959
+Picking joint bandwidth of 0.101
+Picking joint bandwidth of 0.0934
+Picking joint bandwidth of 0.0571
+Picking joint bandwidth of 0.0649
+Picking joint bandwidth of 0.0709
+Picking joint bandwidth of 0.0599
+
+[[11]]
+Picking joint bandwidth of 0.0631
+Picking joint bandwidth of 0.0904
+Picking joint bandwidth of 0.0514
+Picking joint bandwidth of 0.0921
+Picking joint bandwidth of 0.0827
+Picking joint bandwidth of 0.0716
+Picking joint bandwidth of 0.064
+Picking joint bandwidth of 0.0614
+
+[[12]]
+Picking joint bandwidth of 0.0617
+Picking joint bandwidth of 0.0728
+Picking joint bandwidth of 0.0808
+Picking joint bandwidth of 0.0787
+Picking joint bandwidth of 0.0492
+Picking joint bandwidth of 0.0581
+Picking joint bandwidth of 0.0751
+Picking joint bandwidth of 0.0528
+
+[[13]]
+Picking joint bandwidth of 0.0945
+Picking joint bandwidth of 0.125
+Picking joint bandwidth of 0.082
+Picking joint bandwidth of 0.0761
+Picking joint bandwidth of 0.0419
+Picking joint bandwidth of 0.0529
+Picking joint bandwidth of 0.0426
+Picking joint bandwidth of 0.0807
+
+[[14]]
+Picking joint bandwidth of 0.066
+Picking joint bandwidth of 0.0647
+Picking joint bandwidth of 0.0862
+Picking joint bandwidth of 0.068
+Picking joint bandwidth of 0.05
+Picking joint bandwidth of 0.0572
+Picking joint bandwidth of 0.0516
+Picking joint bandwidth of 0.0898
+
+[[15]]
+Picking joint bandwidth of 0.0891
+Picking joint bandwidth of 0.0664
+Picking joint bandwidth of 0.0595
+Picking joint bandwidth of 0.117
+Picking joint bandwidth of 0.0953
+Picking joint bandwidth of 0.0467
+Picking joint bandwidth of 0.0658
+Picking joint bandwidth of 0.0919
+
+[[16]]
+Picking joint bandwidth of 0.0451
+Picking joint bandwidth of 0.0586
+Picking joint bandwidth of 0.139
+Picking joint bandwidth of 0.0668
+Picking joint bandwidth of 0.132
+
+[[17]]
+Picking joint bandwidth of 0.107
+Picking joint bandwidth of 0.0904
+Picking joint bandwidth of 0.0839
+Picking joint bandwidth of 0.0943
+
+[[18]]
+Picking joint bandwidth of 0.0784
+Picking joint bandwidth of 0.0505
+Picking joint bandwidth of 0.071
+Picking joint bandwidth of 0.0523
+
+[[19]]
+Picking joint bandwidth of 0.076
+Picking joint bandwidth of 0.0767
+Picking joint bandwidth of 0.0919
+Picking joint bandwidth of 0.0807
+Picking joint bandwidth of 0.0632
+Picking joint bandwidth of 0.0679
+Picking joint bandwidth of 0.0621
+Picking joint bandwidth of 0.0673
+
+pdf 
+  2 
+pdf 
+  2 
+[[1]]
+
+[[2]]
+
+[[3]]
+
+[[4]]
+
+[[5]]
+
+[[6]]
+
+[[7]]
+
+[[8]]
+
+[[9]]
+
+[[10]]
+
+[[11]]
+
+[[12]]
+
+[[13]]
+
+[[14]]
+
+[[15]]
+
+[[16]]
+
+[[17]]
+
+[[18]]
+
+[[19]]
+
+pdf 
+  2 
+[[1]]
+
+[[2]]
+
+[[3]]
+
+[[4]]
+
+[[5]]
+
+[[6]]
+
+[[7]]
+
+[[8]]
+
+[[9]]
+
+[[10]]
+
+[[11]]
+
+[[12]]
+
+[[13]]
+
+[[14]]
+
+[[15]]
+
+[[16]]
+
+[[17]]
+
+[[18]]
+
+[[19]]
+
+pdf 
+  2 
+[1] "Reproducibility information:"
+[1] "2024-05-17 21:00:05 EDT"
+     user    system   elapsed 
+19108.111    45.019 19241.302 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.3.0 (2023-04-21)
+ os       Rocky Linux 9.2 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/New_York
+ date     2024-05-17
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version    date (UTC) lib source
+ abind                  1.4-5      2016-07-21 [2] CRAN (R 4.3.0)
+ beachmat               2.18.1     2024-02-14 [1] Bioconductor 3.18 (R 4.3.0)
+ Biobase              * 2.62.0     2023-10-24 [2] Bioconductor
+ BiocGenerics         * 0.48.1     2023-11-01 [2] Bioconductor
+ BiocParallel           1.36.0     2023-10-24 [2] Bioconductor
+ bitops                 1.0-7      2021-04-24 [2] CRAN (R 4.3.0)
+ cli                    3.6.2      2023-12-11 [2] CRAN (R 4.3.0)
+ cluster                2.1.6      2023-12-01 [1] CRAN (R 4.3.0)
+ codetools              0.2-19     2023-02-01 [2] CRAN (R 4.3.0)
+ colorspace             2.1-0      2023-01-23 [2] CRAN (R 4.3.0)
+ cowplot                1.1.3      2024-01-22 [2] CRAN (R 4.3.0)
+ crayon                 1.5.2      2022-09-29 [2] CRAN (R 4.3.0)
+ data.table             1.15.0     2024-01-30 [2] CRAN (R 4.3.0)
+ DelayedArray           0.28.0     2023-10-24 [2] Bioconductor
+ DelayedMatrixStats     1.24.0     2023-10-24 [1] Bioconductor
+ deldir                 2.0-4      2024-02-28 [1] CRAN (R 4.3.0)
+ digest                 0.6.34     2024-01-11 [2] CRAN (R 4.3.0)
+ dotCall64              1.1-1      2023-11-28 [1] CRAN (R 4.3.0)
+ dplyr                * 1.1.4      2023-11-17 [2] CRAN (R 4.3.0)
+ ellipsis               0.3.2      2021-04-29 [2] CRAN (R 4.3.0)
+ fansi                  1.0.6      2023-12-08 [2] CRAN (R 4.3.0)
+ farver                 2.1.1      2022-07-06 [2] CRAN (R 4.3.0)
+ fastmap                1.1.1      2023-02-24 [2] CRAN (R 4.3.0)
+ fitdistrplus           1.1-11     2023-04-25 [1] CRAN (R 4.3.0)
+ forcats              * 1.0.0      2023-01-29 [2] CRAN (R 4.3.0)
+ future                 1.33.2     2024-03-26 [1] CRAN (R 4.3.0)
+ future.apply           1.11.2     2024-03-28 [1] CRAN (R 4.3.0)
+ generics               0.1.3      2022-07-05 [2] CRAN (R 4.3.0)
+ GenomeInfoDb         * 1.38.6     2024-02-08 [2] Bioconductor 3.18 (R 4.3.0)
+ GenomeInfoDbData       1.2.11     2024-02-21 [2] Bioconductor
+ GenomicRanges        * 1.54.1     2023-10-29 [2] Bioconductor
+ ggplot2              * 3.4.4      2023-10-12 [2] CRAN (R 4.3.0)
+ ggrepel                0.9.5      2024-01-10 [2] CRAN (R 4.3.0)
+ ggridges               0.5.6      2024-01-23 [2] CRAN (R 4.3.0)
+ globals                0.16.3     2024-03-08 [1] CRAN (R 4.3.0)
+ glue                   1.7.0      2024-01-09 [2] CRAN (R 4.3.0)
+ goftest                1.2-3      2021-10-07 [1] CRAN (R 4.3.0)
+ gridExtra            * 2.3        2017-09-09 [2] CRAN (R 4.3.0)
+ gtable                 0.3.4      2023-08-21 [2] CRAN (R 4.3.0)
+ here                 * 1.0.1      2020-12-13 [1] CRAN (R 4.3.0)
+ hms                    1.1.3      2023-03-21 [2] CRAN (R 4.3.0)
+ htmltools              0.5.7      2023-11-03 [2] CRAN (R 4.3.0)
+ htmlwidgets            1.6.4      2023-12-06 [1] CRAN (R 4.3.0)
+ httpuv                 1.6.15     2024-03-26 [1] CRAN (R 4.3.0)
+ httr                   1.4.7      2023-08-15 [2] CRAN (R 4.3.0)
+ ica                    1.0-3      2022-07-08 [1] CRAN (R 4.3.0)
+ igraph                 2.0.3      2024-03-13 [1] CRAN (R 4.3.0)
+ IRanges              * 2.36.0     2023-10-24 [2] Bioconductor
+ irlba                  2.3.5.1    2022-10-03 [1] CRAN (R 4.3.0)
+ jsonlite               1.8.8      2023-12-04 [2] CRAN (R 4.3.0)
+ KernSmooth             2.23-22    2023-07-10 [1] CRAN (R 4.3.0)
+ labeling               0.4.3      2023-08-29 [2] CRAN (R 4.3.0)
+ later                  1.3.2      2023-12-06 [1] CRAN (R 4.3.0)
+ lattice                0.22-5     2023-10-24 [2] CRAN (R 4.3.0)
+ lazyeval               0.2.2      2019-03-15 [1] CRAN (R 4.3.0)
+ leiden                 0.4.3.1    2023-11-17 [1] CRAN (R 4.3.0)
+ lifecycle              1.0.4      2023-11-07 [2] CRAN (R 4.3.0)
+ listenv                0.9.1      2024-01-29 [1] CRAN (R 4.3.0)
+ lmtest                 0.9-40     2022-03-21 [1] CRAN (R 4.3.0)
+ lubridate            * 1.9.3      2023-09-27 [2] CRAN (R 4.3.0)
+ magrittr               2.0.3      2022-03-30 [2] CRAN (R 4.3.0)
+ MASS                   7.3-60.0.1 2024-01-13 [2] CRAN (R 4.3.0)
+ Matrix                 1.6-5      2024-01-11 [1] CRAN (R 4.3.0)
+ MatrixGenerics       * 1.14.0     2023-10-24 [2] Bioconductor
+ matrixStats          * 1.2.0      2023-12-11 [2] CRAN (R 4.3.0)
+ mime                   0.12       2021-09-28 [2] CRAN (R 4.3.0)
+ miniUI                 0.1.1.1    2018-05-18 [1] CRAN (R 4.3.0)
+ munsell                0.5.0      2018-06-12 [2] CRAN (R 4.3.0)
+ nlme                   3.1-164    2023-11-27 [2] CRAN (R 4.3.0)
+ parallelly             1.37.1     2024-02-29 [1] CRAN (R 4.3.0)
+ patchwork              1.2.0      2024-01-08 [1] CRAN (R 4.3.0)
+ pbapply                1.7-2      2023-06-27 [1] CRAN (R 4.3.0)
+ pillar                 1.9.0      2023-03-22 [2] CRAN (R 4.3.0)
+ pkgconfig              2.0.3      2019-09-22 [2] CRAN (R 4.3.0)
+ plotly                 4.10.4     2024-01-13 [1] CRAN (R 4.3.0)
+ plyr                   1.8.9      2023-10-02 [1] CRAN (R 4.3.0)
+ png                    0.1-8      2022-11-29 [1] CRAN (R 4.3.0)
+ polyclip               1.10-6     2023-09-27 [1] CRAN (R 4.3.0)
+ progressr              0.14.0     2023-08-10 [1] CRAN (R 4.3.0)
+ promises               1.3.0      2024-04-05 [1] CRAN (R 4.3.0)
+ purrr                * 1.0.2      2023-08-10 [2] CRAN (R 4.3.0)
+ R6                     2.5.1      2021-08-19 [2] CRAN (R 4.3.0)
+ RANN                   2.6.1      2019-01-08 [1] CRAN (R 4.3.0)
+ RColorBrewer           1.1-3      2022-04-03 [2] CRAN (R 4.3.0)
+ Rcpp                   1.0.12     2024-01-09 [2] CRAN (R 4.3.0)
+ RcppAnnoy              0.0.22     2024-01-23 [1] CRAN (R 4.3.0)
+ RCurl                  1.98-1.14  2024-01-09 [2] CRAN (R 4.3.0)
+ readr                * 2.1.5      2024-01-10 [2] CRAN (R 4.3.0)
+ reshape2               1.4.4      2020-04-09 [1] CRAN (R 4.3.0)
+ reticulate             1.36.1     2024-04-22 [1] CRAN (R 4.3.0)
+ rlang                  1.1.3      2024-01-10 [1] CRAN (R 4.3.0)
+ ROCR                   1.0-11     2020-05-02 [1] CRAN (R 4.3.0)
+ rprojroot              2.0.4      2023-11-05 [2] CRAN (R 4.3.0)
+ Rtsne                  0.17       2023-12-07 [1] CRAN (R 4.3.0)
+ S4Arrays               1.2.0      2023-10-24 [2] Bioconductor
+ S4Vectors            * 0.40.2     2023-11-23 [2] Bioconductor 3.18 (R 4.3.0)
+ scales                 1.3.0      2023-11-28 [2] CRAN (R 4.3.0)
+ scattermore            1.2        2023-06-12 [1] CRAN (R 4.3.0)
+ sctransform            0.4.1      2023-10-19 [1] CRAN (R 4.3.0)
+ scuttle              * 1.12.0     2023-10-24 [1] Bioconductor
+ sessioninfo          * 1.2.2      2021-12-06 [1] CRAN (R 4.3.0)
+ Seurat               * 4.4.0      2023-09-28 [1] CRAN (R 4.3.0)
+ SeuratObject         * 5.0.2      2024-05-08 [1] CRAN (R 4.3.0)
+ shiny                  1.8.1.1    2024-04-02 [1] CRAN (R 4.3.0)
+ SingleCellExperiment * 1.24.0     2023-10-24 [1] Bioconductor
+ sp                     2.1-4      2024-04-30 [1] CRAN (R 4.3.0)
+ spam                   2.10-0     2023-10-23 [1] CRAN (R 4.3.0)
+ SparseArray            1.2.4      2024-02-11 [2] Bioconductor 3.18 (R 4.3.0)
+ sparseMatrixStats      1.14.0     2023-10-24 [1] Bioconductor
+ spatstat.data          3.0-4      2024-01-15 [1] CRAN (R 4.3.0)
+ spatstat.explore       3.2-7      2024-03-21 [1] CRAN (R 4.3.0)
+ spatstat.geom          3.2-9      2024-02-28 [1] CRAN (R 4.3.0)
+ spatstat.random        3.2-3      2024-02-29 [1] CRAN (R 4.3.0)
+ spatstat.sparse        3.0-3      2023-10-24 [1] CRAN (R 4.3.0)
+ spatstat.utils         3.0-4      2023-10-24 [1] CRAN (R 4.3.0)
+ stringi                1.8.3      2023-12-11 [2] CRAN (R 4.3.0)
+ stringr              * 1.5.1      2023-11-14 [2] CRAN (R 4.3.0)
+ SummarizedExperiment * 1.32.0     2023-10-24 [2] Bioconductor
+ survival               3.5-8      2024-02-14 [2] CRAN (R 4.3.0)
+ tensor                 1.5        2012-05-05 [1] CRAN (R 4.3.0)
+ tibble               * 3.2.1      2023-03-20 [2] CRAN (R 4.3.0)
+ tidyr                * 1.3.1      2024-01-24 [2] CRAN (R 4.3.0)
+ tidyselect             1.2.0      2022-10-10 [2] CRAN (R 4.3.0)
+ tidyseurat           * 0.8.0      2024-01-10 [1] CRAN (R 4.3.0)
+ tidyverse            * 2.0.0      2023-02-22 [2] CRAN (R 4.3.0)
+ timechange             0.3.0      2024-01-18 [2] CRAN (R 4.3.0)
+ ttservice            * 0.4.0      2023-11-01 [1] CRAN (R 4.3.0)
+ tzdb                   0.4.0      2023-05-12 [2] CRAN (R 4.3.0)
+ utf8                   1.2.4      2023-10-22 [2] CRAN (R 4.3.0)
+ uwot                   0.2.2      2024-04-21 [1] CRAN (R 4.3.0)
+ vctrs                  0.6.5      2023-12-01 [1] CRAN (R 4.3.0)
+ viridisLite            0.4.2      2023-05-02 [2] CRAN (R 4.3.0)
+ withr                  3.0.0      2024-01-16 [2] CRAN (R 4.3.0)
+ xtable                 1.8-4      2019-04-21 [1] CRAN (R 4.3.0)
+ XVector                0.42.0     2023-10-24 [2] Bioconductor
+ zlibbioc               1.48.0     2023-10-24 [2] Bioconductor
+ zoo                    1.8-12     2023-04-13 [1] CRAN (R 4.3.0)
+
+ [1] /data/home/malekrj/R/x86_64-pc-linux-gnu-library/4.3
+ [2] /data/apps/software/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/r-4.3.0-a22xr47ree4bcdwtihjx4sa6zt2hgs2n/rlib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Fri May 17 09:00:06 PM EDT 2024

@@ -1,0 +1,74 @@
+**** Job starts ****
+Fri May  9 02:34:10 PM EDT 2025
+**** LOCUS info ****
+User: malekrj
+Job id: 
+Job name: 
+Hostname: ai-hpcn213
+/data/vrc_bsc/Rory/Covail/04_Analysis/code/paperfigures
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Loading required package: Rcpp
+Loading required package: data.table
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:data.table’:
+
+    between, first, last
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+========================================
+tidyseurat version 0.8.0
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following object is masked from ‘package:ttservice’:
+
+    plot_ly
+
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%  |                                                                              |==                                                                    |   3%  |                                                                              |====                                                                  |   5%  |                                                                              |=====                                                                 |   8%  |                                                                              |=======                                                               |  10%  |                                                                              |=========                                                             |  13%  |                                                                              |===========                                                           |  15%  |                                                                              |=============                                                         |  18%  |                                                                              |==============                                                        |  21%  |                                                                              |================                                                      |  23%  |                                                                              |==================                                                    |  26%  |                                                                              |====================                                                  |  28%  |                                                                              |======================                                                |  31%  |                                                                              |=======================                                               |  33%  |                                                                              |=========================                                             |  36%  |                                                                              |===========================                                           |  38%  |                                                                              |=============================                                         |  41%  |                                                                              |===============================                                       |  44%  |                                                                              |================================                                      |  46%  |                                                                              |==================================                                    |  49%  |                                                                              |====================================                                  |  51%  |                                                                              |======================================                                |  54%  |                                                                              |=======================================                               |  56%  |                                                                              |=========================================                             |  59%  |                                                                              |===========================================                           |  62%  |                                                                              |=============================================                         |  64%  |                                                                              |===============================================                       |  67%  |                                                                              |================================================                      |  69%  |                                                                              |==================================================                    |  72%  |                                                                              |====================================================                  |  74%  |                                                                              |======================================================                |  77%  |                                                                              |========================================================              |  79%  |                                                                              |=========================================================             |  82%  |                                                                              |===========================================================           |  85%  |                                                                              |=============================================================         |  87%  |                                                                              |===============================================================       |  90%  |                                                                              |=================================================================     |  92%  |                                                                              |==================================================================    |  95%  |                                                                              |====================================================================  |  97%  |                                                                              |======================================================================| 100%
+Calculating cluster Atypical
+Calculating cluster Acute Activated
+Calculating cluster Intermediate
+Calculating cluster Resting IgG
+Calculating cluster Resting IgA
+Calculating cluster Plasmablast-like
+Calculating cluster Naive
+Error in convert_annotations(annotation_row, annotation_colors) : 
+  Factor levels on variable ann2 do not match with annotation_colors
+Calls: pheatmap -> heatmap_motor -> convert_annotations
+Execution halted

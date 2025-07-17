@@ -1,0 +1,502 @@
+**** Job starts ****
+Mon Apr 28 05:05:02 PM EDT 2025
+**** LOCUS info ****
+User: malekrj
+Job id: 
+Job name: 
+Hostname: ai-hpcn211
+/data/vrc_bsc/Rory/Covail/04_Analysis/code/05_clustering
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Loading required package: Rcpp
+Loading required package: ttservice
+========================================
+tidyseurat version 0.8.0
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following object is masked from ‘package:ttservice’:
+
+    plot_ly
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ forcats   1.0.0     ✔ readr     2.1.5
+✔ lubridate 1.9.3     ✔ stringr   1.5.1
+✔ purrr     1.0.4     ✔ tibble    3.2.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::bind_cols() masks ttservice::bind_cols()
+✖ dplyr::bind_rows() masks ttservice::bind_rows()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::lag()       masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+here() starts at /data/vrc_bsc/Rory/Covail
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%
+PC_ 1 
+Positive:  S100A10, CRIP1, GAPDH, ACTB, ACTG1, TMSB4X, ANXA2, TKT, SUB1, ARPC1B 
+	   TMSB10, PFN1, IFI30, ANXA4, TAGLN2, S100A11, JPT1, HCST, ARPC5, CCDC167 
+	   GSN, ITGB1, CORO1A, S100A4, C12orf75, TLE5, PPIA, PTMS, AHNAK, TXN 
+Negative:  GSTP1, CCSER1, H1-10, CD72, LINC01857, CD83, IGHD, JUN, TCL1A, JUNB 
+	   PCDH9, IGLC3, ZC3H12B, LINC01781, IGHM, RGS2, HMGN2, GPM6A, NFKBIA, TALAM1 
+	   PALS2, FCRL3, LILRA4, LINC02899, RHOB, ENSG00000257275, IFI44L, DTX1, ACSM3, LINC02161 
+PC_ 2 
+Positive:  PDE4D, S100A4, TUBB, ENSG00000287092, ITGB1, TAGLN2, NFKBIA, S100A10, CRIP2, TMSB10 
+	   IGHE, RPS4Y1, LINC01934, JCHAIN, C12orf75, NLGN4Y, TXNDC5, LINC01781, ID3, LGALS3 
+	   CCDC167, CD70, IGHG4, IL4R, GPR25, CHAD, TXN, LDHA, LMNA, ATF5 
+Negative:  SOX5, FCRL5, FCRL3, ZEB2, FGR, DTX1, CD72, PALS2, CIB1, LILRB2 
+	   MACROD2, NKG7, RGS2, PLD4, PLAC8, MIR3681HG, RHOB, IFI30, IRAG2, GSTP1 
+	   HLA-DRB5, JUNB, PCDH9, CA8, IGHD, SLC12A8, TMSB4X, FOS, DHRS9, MX1 
+PC_ 3 
+Positive:  CRIP1, AHNAK, S100A10, ANXA4, GSN, CRIP2, PDE4D, S100A11, TAGLN2, IER2 
+	   CCDC167, MYADM, HOPX, ANXA2, TKT, CIB1, EBI3, EGR1, FGR, KCNMA1 
+	   ITGB1, LMNA, TMSB4X, IFI30, TLE5, ARPC1B, NLGN4Y, IGHG4, DUSP2, TALAM1 
+Negative:  PCLAF, MKI67, TYMS, RRM2, BIRC5, CCNB2, CENPF, TK1, STMN1, UBE2C 
+	   ZWINT, CDC20, PTTG1, TPX2, CEP55, AURKB, CDT1, KIFC1, CDKN3, MYBL2 
+	   CCNA2, DEPDC1B, GTSE1, TROAP, H3C2, PLK1, CENPW, APOBEC3B, ASPM, ASF1B 
+PC_ 4 
+Positive:  FOS, EGR1, CD69, IER2, JUNB, JUN, DUSP2, CD83, NR4A1, NFKBIA 
+	   RHOB, LMNA, H1-4, CCDC200, RPS4Y1, CDKN1A, ENSG00000289474, MYADM, RASSF6, TNF 
+	   KCNMA1, H1-2, RGS2, NLGN4Y, TCL1A, CCDC167, H1-10, PDE4D, IGHE, EGR4 
+Negative:  TMSB4X, PLAC8, IFI30, FGR, MT-CO1, IGHG1, CXCR3, LINC02899, FCRL3, GPR25 
+	   PRDX1, ISG15, IFITM1, PFN1, CFL1, SOX5, IGHG3, CIB1, IGHGP, PPIA 
+	   MX1, NKG7, ACTG1, ACTB, MT2A, HLA-DRB5, TMSB10, ARPC1B, FCRL5, GSTP1 
+PC_ 5 
+Positive:  JCHAIN, IGHA1, LINC01781, IGHA2, LGALS1, CCSER1, UTS2B, GPM6A, IFITM1, CD1C 
+	   JUNB, GPR25, CHAD, RPS26, LILRA4, IFI44L, FOS, CD69, SLC25A5, S100A4 
+	   HLA-DQA2, LINC01857, H4C3, IGLL5, RASSF6, MZB1, CXCR3, ISG15, PLAC8, MT2A 
+Negative:  PDE4D, HOPX, IGHG4, KCNMA1, IGHG1, IL4R, IGHE, FCRL5, CA8, DHRS9 
+	   IRAG2, FCRL3, NLGN4Y, EBI3, CCDC200, PALS2, MYADM, ENSG00000278996, ZEB2, CCDC167 
+	   CUX1, LINC02161, ENSG00000289901, TALAM1, NKG7, AHNAK, IGHGP, LILRB2, ZC3H12B, S100A10 
+Warning message:
+Key ‘PC_’ taken, using ‘pca_’ instead 
+Transposing data matrix
+Initializing state using k-means centroids initialization
+Harmony 1/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 2/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 3/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony converged after 3 iterations
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+17:06:28 UMAP embedding parameters a = 0.9922 b = 1.112
+17:06:28 Read 21378 rows and found 30 numeric columns
+17:06:28 Using Annoy for neighbor search, n_neighbors = 30
+17:06:28 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:06:32 Writing NN index file to temp file /data/scratch/malekrj/ai-hpcsubmit2/Rtmpi8MRsC/filec129f47354ef8
+17:06:32 Searching Annoy index using 1 thread, search_k = 3000
+17:06:43 Annoy recall = 100%
+17:06:44 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+17:06:45 Initializing from normalized Laplacian + noise (using RSpectra)
+17:06:45 Commencing optimization for 200 epochs, with 929046 positive edges
+17:06:45 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:07:00 Optimization finished
+17:07:01 UMAP embedding parameters a = 0.9922 b = 1.112
+17:07:01 Read 21378 rows and found 30 numeric columns
+17:07:01 Using Annoy for neighbor search, n_neighbors = 30
+17:07:01 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:07:03 Writing NN index file to temp file /data/scratch/malekrj/ai-hpcsubmit2/Rtmpi8MRsC/filec129f1df28af0
+17:07:03 Searching Annoy index using 1 thread, search_k = 3000
+17:07:15 Annoy recall = 100%
+17:07:16 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+17:07:17 Initializing from normalized Laplacian + noise (using RSpectra)
+17:07:17 Commencing optimization for 200 epochs, with 934736 positive edges
+17:07:17 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:07:32 Optimization finished
+Warning message:
+In scale_x_log10() : log-10 transformation introduced infinite values.
+null device 
+          1 
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%
+Warning in svd.function(A = t(x = object), nv = npcs, ...) :
+  You're computing too large a percentage of total singular values, use a standard svd instead.
+PC_ 1 
+Positive:  P-CD99, P-CD49d, P-CD71, P-CD29, P-CD45, P-CD45RA, P-CD95, P-CD27, P-ITGB2-CD18, P-CD39 
+	   P-CD11c, P-CD62L, P-CD82, P-CD44, P-IgG2b-m-iso, P-CD45RB, P-CD52, P-CD86, P-CD80, P-HLADR 
+	   P-CD4, P-IgG1-m-iso, P-CD19, P-LAIR1, P-CD307d-FcRL4, P-CD40, P-CD3 
+Negative:  P-CD72, P-IgG2a-m-iso, P-CD24, P-IgD, P-IgM, P-CD32, P-CD31, P-CD196-CCR6, P-ITGB7, P-CD185-CXCR5 
+	   P-CD21, P-IgG2b-r-iso, P-CD73, P-IgA, P-CD22, P-CD1c, P-CD56, P-CD268-BAFFR, P-CD20, P-CD14 
+	   P-IgG, P-CD85j, P-CD69, P-FCRL5, P-CD183-CXCR3, P-CD35, P-CD38 
+PC_ 2 
+Positive:  P-CD35, P-CD21, P-CD69, P-CD44, P-CD185-CXCR5, P-CD31, P-ITGB2-CD18, P-IgG1-m-iso, P-CD24, P-CD45RB 
+	   P-CD73, P-CD268-BAFFR, P-CD38, P-CD40, P-CD29, P-CD49d, P-CD4, P-CD56, P-CD14, P-CD62L 
+	   P-IgA, P-CD1c, P-CD45, P-CD3, P-CD27, P-CD45RA, P-ITGB7 
+Negative:  P-FCRL5, P-CD11c, P-CD20, P-CD19, P-CD95, P-CD307d-FcRL4, P-IgG2b-r-iso, P-CD85j, P-IgG2a-m-iso, P-CD71 
+	   P-HLADR, P-CD52, P-CD32, P-CD86, P-CD22, P-IgG2b-m-iso, P-CD82, P-IgG, P-IgD, P-CD72 
+	   P-CD80, P-IgM, P-CD39, P-CD183-CXCR3, P-LAIR1, P-CD196-CCR6, P-CD99 
+PC_ 3 
+Positive:  P-CD72, P-CD32, P-CD196-CCR6, P-CD20, P-CD22, P-CD52, P-CD19, P-CD185-CXCR5, P-CD31, P-CD24 
+	   P-CD268-BAFFR, P-CD40, P-CD85j, P-CD45, P-CD1c, P-CD82, P-ITGB7, P-IgG1-m-iso, P-IgM, P-HLADR 
+	   P-FCRL5, P-CD39, P-IgA, P-IgD, P-ITGB2-CD18, P-CD14, P-IgG2b-m-iso 
+Negative:  P-IgG2b-r-iso, P-CD71, P-IgG2a-m-iso, P-CD62L, P-CD86, P-CD27, P-CD95, P-CD45RB, P-CD35, P-CD69 
+	   P-CD99, P-CD29, P-IgG, P-CD183-CXCR3, P-CD49d, P-CD11c, P-CD80, P-CD45RA, P-CD4, P-CD56 
+	   P-CD73, P-CD3, P-CD21, P-CD307d-FcRL4, P-CD38, P-CD44, P-LAIR1 
+PC_ 4 
+Positive:  P-CD45RB, P-IgG2b-m-iso, P-CD45RA, P-CD32, P-CD24, P-CD1c, P-CD31, P-IgA, P-CD45, P-CD52 
+	   P-CD95, P-CD307d-FcRL4, P-CD44, P-CD27, P-ITGB7, P-IgM, P-CD85j, P-IgD, P-CD69, P-CD183-CXCR3 
+	   P-CD11c, P-CD99, P-CD39, P-CD4, P-CD20, P-CD3, P-IgG2b-r-iso 
+Negative:  P-CD268-BAFFR, P-CD22, P-CD62L, P-CD19, P-HLADR, P-LAIR1, P-IgG1-m-iso, P-CD71, P-CD56, P-CD185-CXCR5 
+	   P-CD14, P-CD49d, P-ITGB2-CD18, P-IgG2a-m-iso, P-CD29, P-CD35, P-CD196-CCR6, P-CD80, P-IgG, P-CD40 
+	   P-FCRL5, P-CD21, P-CD86, P-CD38, P-CD73, P-CD82, P-CD72 
+PC_ 5 
+Positive:  P-CD14, P-CD4, P-CD3, P-IgA, P-CD56, P-CD11c, P-IgM, P-CD39, P-IgG1-m-iso, P-CD95 
+	   P-CD31, P-IgD, P-FCRL5, P-CD86, P-CD1c, P-ITGB7, P-ITGB2-CD18, P-CD185-CXCR5, P-CD32, P-CD38 
+	   P-CD80, P-CD71, P-IgG2a-m-iso, P-CD69, P-CD307d-FcRL4, P-CD82, P-CD72 
+Negative:  P-IgG, P-IgG2b-m-iso, P-CD40, P-CD45RA, P-CD20, P-CD24, P-CD19, P-CD22, P-IgG2b-r-iso, P-CD35 
+	   P-CD21, P-CD45RB, P-CD85j, P-CD73, P-LAIR1, P-CD183-CXCR3, P-CD196-CCR6, P-CD268-BAFFR, P-CD52, P-CD49d 
+	   P-HLADR, P-CD44, P-CD27, P-CD29, P-CD45, P-CD99, P-CD62L 
+Warning: Number of dimensions changing from 45 to 50
+Warning messages:
+1: Requested number is larger than the number of available items (54). Setting to 54. 
+2: Requested number is larger than the number of available items (54). Setting to 54. 
+3: Requested number is larger than the number of available items (54). Setting to 54. 
+4: Requested number is larger than the number of available items (54). Setting to 54. 
+5: Requested number is larger than the number of available items (54). Setting to 54. 
+Transposing data matrix
+Initializing state using k-means centroids initialization
+Harmony 1/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 2/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 3/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony converged after 3 iterations
+Warning: Number of dimensions changing from 45 to 50
+17:08:09 UMAP embedding parameters a = 0.2207 b = 0.8951
+17:08:09 Read 21378 rows and found 18 numeric columns
+17:08:09 Using Annoy for neighbor search, n_neighbors = 40
+17:08:09 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:08:12 Writing NN index file to temp file /data/scratch/malekrj/ai-hpcsubmit2/Rtmpi8MRsC/filec129f592e361d
+17:08:12 Searching Annoy index using 1 thread, search_k = 4000
+17:08:27 Annoy recall = 100%
+17:08:27 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 40
+17:08:28 Initializing from normalized Laplacian + noise (using RSpectra)
+17:08:29 Commencing optimization for 200 epochs, with 890938 positive edges
+17:08:29 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:08:43 Optimization finished
+17:08:43 UMAP embedding parameters a = 0.2207 b = 0.8951
+17:08:43 Read 21378 rows and found 18 numeric columns
+17:08:43 Using Annoy for neighbor search, n_neighbors = 40
+17:08:43 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:08:46 Writing NN index file to temp file /data/scratch/malekrj/ai-hpcsubmit2/Rtmpi8MRsC/filec129f2e32d2a9
+17:08:46 Searching Annoy index using 1 thread, search_k = 4000
+17:09:00 Annoy recall = 100%
+17:09:01 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 40
+17:09:02 Initializing from normalized Laplacian + noise (using RSpectra)
+17:09:02 Commencing optimization for 200 epochs, with 895808 positive edges
+17:09:02 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:09:17 Optimization finished
+Warning message:
+Keys should be one or more alphanumeric characters followed by an underscore, setting key from har_protUMAP_ to harprotUMAP_ 
+null device 
+          1 
+Calculating cell-specific modality weights
+Finding 20 nearest neighbors for each modality.
+Calculating kernel bandwidths
+Finding multimodal neighbors
+Constructing multimodal KNN graph
+Constructing multimodal SNN graph
+Warning message:
+In FindMultiModalNeighbors(seuObj, reduction.list = list("harmony",  :
+  The number of provided modality.weight.name is not equal to the number of modalities. RNA.weight Prot.weight are used to store the modality weights
+17:11:18 UMAP embedding parameters a = 0.2207 b = 0.8951
+17:11:18 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+17:11:19 Initializing from normalized Laplacian + noise (using RSpectra)
+17:11:19 Commencing optimization for 200 epochs, with 652890 positive edges
+17:11:19 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:11:35 Optimization finished
+Warning message:
+Keys should be one or more alphanumeric characters followed by an underscore, setting key from harmony.wnnUMAP_ to harmonywnnUMAP_ 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+                                     P.CD268.BAFFR   P.CD14    P.CD20
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1      8.850738 1.269706  4.808941
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1      8.242621 2.685298  7.610887
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1      9.716578 4.425916  9.202044
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1      6.573979 2.833145 15.031178
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1      8.854979 1.682686  6.644324
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1     10.519221 2.723463 15.072457
+                                         P.CD24     P.CD80   P.CD82    P.CD85j
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1  1.6857332  0.6894560 4.303127 -1.2352227
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1  1.6311610  2.1334607 5.373075  2.9137238
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1  2.7835620  2.0973760 6.527142  3.5495879
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1  6.3673114 -0.3693349 9.002156  4.3786427
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 -0.5300812  5.4722752 5.121258  0.7019616
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1  7.8816508  3.1780714 9.103498  4.1873026
+                                     P.CD185.CXCR5 P.CD307d.FcRL4 P.IgG1.m.iso
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1      9.104749      1.0295782     7.204984
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1      6.213783      3.4427370     8.713124
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1      1.290043      0.9951720     6.620935
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1      3.158246     -0.1210696     6.376364
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1      5.228624      0.7043806     7.368845
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1      4.111045      4.1706330     7.858592
+                                     P.IgG2a.m.iso P.IgG2b.m.iso P.IgG2b.r.iso
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1    0.09538784      9.251882     0.2982259
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1   -0.10224874     11.578037     0.1510928
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1    1.02564628     10.028537     1.8408081
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1    0.07142940     10.313541     1.4273270
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1    1.25331999      9.635279    -0.5645073
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1    0.44628156     11.831708     1.8252608
+                                     P.CD196.CCR6     P.CD1c    P.CD27
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1     4.442508 10.6831252  1.597794
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1     4.868643 19.4770294  5.667612
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1     6.708810  0.8973718  5.732986
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1     4.684184 31.0490716  7.117173
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1     7.279601 21.6570721  2.699336
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1     2.527036  5.9103662 17.119664
+                                           P.CD3     P.CD38   P.CD40 P.CD45RA
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1  5.51920126 10.5018735 2.390949 14.71282
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1  3.10309323  5.7416340 3.341430 20.09431
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1  2.49144770 12.3000879 7.565245 18.01505
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1  4.70114697  0.4409994 4.262478 15.52015
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1  4.39531116  7.5847722 8.869620 18.54415
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 -0.06788741  5.6523131 9.987681 23.46554
+                                      P.CD45RB    P.CD52     P.CD56    P.CD71
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1 14.340870  5.849604 -2.0981409 13.227905
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1 17.920592  6.629654 -1.1407609 11.521602
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1  9.112024  6.668660  1.0934180 15.218685
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1  7.555043  9.332773  0.6743998  9.121397
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 15.721891  7.946022 -1.8659439 19.515160
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 13.335896 11.115471  0.3005612 22.473652
+                                        P.CD72     P.CD73    P.CD95   P.CD99
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1  7.092026 12.4773438  3.445211 11.17169
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1  9.440392 14.1576421  3.616062 21.55195
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1 15.427278  6.6351437  2.029396 16.49139
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1 30.117879  5.1900285 10.707705 16.13514
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 21.508012  7.4075834  7.887823 15.81374
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1  3.217464  0.9007021 21.823938 27.46774
+                                     P.CD183.CXCR3    P.FCRL5  P.HLADR
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1    -0.4503237  1.0375553 14.30572
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1     2.5001368 -1.2468131 13.38627
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1    -0.3640011  0.9523758 10.61771
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1     2.2191511  9.3676529 12.88669
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1     0.2189626  0.1118082 13.91983
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1    -0.1859349 10.0576328 11.27399
+                                          P.IgD     P.IgG      P.IgM     P.IgA
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1 -2.1007618  8.143561 -0.4632989  2.817456
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1 -0.4338186  9.154037  0.3062113  4.456527
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1  0.1165578 13.370367  2.1617472  1.485756
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1  0.4637334 17.105160  0.0528235  5.750126
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1  0.3047604 14.051256 -1.5899466 29.201837
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 -0.6949926  1.839420 -0.5327625  0.836594
+                                       P.ITGB7     P.LAIR1     P.CD11c   P.CD19
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1  1.337775 10.58558172  0.08009352 11.98991
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1 11.117370 22.77532907  0.35089296 18.07589
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1 25.708286 10.48949516  4.78681170 23.15448
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1  3.055927 23.15843407 20.62276698 28.05065
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 -2.064627  0.03307015  2.89054137 17.03094
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 44.180556 17.83675490 25.17514593 27.79459
+                                        P.CD21   P.CD22      P.CD32    P.CD35
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1 37.355561 20.43773 -0.05796908 21.741170
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1 39.669594 17.66408  0.75875540 22.431010
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1 32.411678 26.92432  6.38814596 21.894924
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1 -1.315596 18.22188 24.89799706  1.812501
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 33.863761 20.19379 11.33823728 22.910472
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1  1.110909 18.85358 13.33191055 17.781549
+                                         P.CD39     P.CD4  P.CD49d     P.CD69
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1 -0.6615335 14.241010 19.99146 12.8282741
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1  6.2878103  4.656206 24.36572 11.1414448
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1 14.8143457 10.135365 16.22695  9.4143325
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1  6.6191376  6.968520 14.07432  0.4508738
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1  9.7646372 17.688758 19.80494 12.3692899
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 10.5090909  6.316988 24.99212  6.4417921
+                                     P.ITGB2.CD18    P.CD29    P.CD31   P.CD44
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1    32.151171 11.858523 8.9677778 34.90518
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1    27.311010 11.739889 4.3297340 37.48322
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1    22.535982  6.813595 4.8011388 31.84836
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1     8.992762  8.343027 7.0665275 22.50719
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1    24.492460  9.204381 7.5015975 31.82633
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1    17.818064  9.852790 0.9706587 36.55440
+                                       P.CD45     P.CD62L     P.CD86
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1 12.95696  0.04876927  3.8704892
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1 13.98853  3.53962490 -0.9093062
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1 15.52053 20.07490972 -0.4704262
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1 14.81422 -0.06946189  0.5126184
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 13.72964  2.52056553 -0.1480451
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 21.57553  2.22336263  4.9914747
+                                                                     CELL
+COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1 COV_09_13_2023_P1_AAAGCAAAGGCTAGGT-1
+COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1 COV_09_13_2023_P1_AACCGCGAGTTGCAGG-1
+COV_09_13_2023_P1_AACTCCCTCCTACAGA-1 COV_09_13_2023_P1_AACTCCCTCCTACAGA-1
+COV_09_13_2023_P1_AAGGCAGAGTATGACA-1 COV_09_13_2023_P1_AAGGCAGAGTATGACA-1
+COV_09_13_2023_P1_AATCCAGAGATAGTCA-1 COV_09_13_2023_P1_AATCCAGAGATAGTCA-1
+COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1 COV_09_13_2023_P1_ACAGCCGAGCAGCGTA-1
+null device 
+          1 
+Picking joint bandwidth of 0.451
+Picking joint bandwidth of 0.275
+Picking joint bandwidth of 0.508
+Picking joint bandwidth of 0.666
+Picking joint bandwidth of 0.258
+Picking joint bandwidth of 0.367
+Picking joint bandwidth of 0.433
+Picking joint bandwidth of 0.538
+Picking joint bandwidth of 0.252
+Picking joint bandwidth of 0.227
+Picking joint bandwidth of 0.243
+Picking joint bandwidth of 0.385
+Picking joint bandwidth of 0.351
+Picking joint bandwidth of 0.516
+Picking joint bandwidth of 1.78
+Picking joint bandwidth of 0.825
+Picking joint bandwidth of 0.374
+Picking joint bandwidth of 1.6
+Picking joint bandwidth of 0.885
+Picking joint bandwidth of 0.877
+Picking joint bandwidth of 1.24
+Picking joint bandwidth of 0.334
+Picking joint bandwidth of 0.394
+Picking joint bandwidth of 1.38
+Picking joint bandwidth of 1.41
+Picking joint bandwidth of 0.985
+Picking joint bandwidth of 1.13
+Picking joint bandwidth of 1.11
+Picking joint bandwidth of 0.288
+Picking joint bandwidth of 0.825
+Picking joint bandwidth of 0.568
+Picking joint bandwidth of 0.559
+Picking joint bandwidth of 0.925
+Picking joint bandwidth of 0.497
+Picking joint bandwidth of 0.913
+Picking joint bandwidth of 2.06
+Picking joint bandwidth of 1.28
+Picking joint bandwidth of 1.58
+Picking joint bandwidth of 0.81
+Picking joint bandwidth of 1.93
+Picking joint bandwidth of 1.04
+Picking joint bandwidth of 1.03
+Picking joint bandwidth of 0.826
+Picking joint bandwidth of 1.37
+Picking joint bandwidth of 0.54
+Picking joint bandwidth of 0.87
+Picking joint bandwidth of 0.597
+Picking joint bandwidth of 1.18
+Picking joint bandwidth of 0.929
+Picking joint bandwidth of 0.463
+Picking joint bandwidth of 1.71
+Picking joint bandwidth of 0.656
+Picking joint bandwidth of 2.29
+Warning message:
+`aes_string()` was deprecated in ggplot2 3.0.0.
+ℹ Please use tidy evaluation idioms with `aes()`.
+ℹ See also `vignette("ggplot2-in-packages")` for more information. 
+null device 
+          1 
+Calculating cluster 0
+Calculating cluster 1
+Calculating cluster 2
+Calculating cluster 3
+Calculating cluster 4
+Calculating cluster 5
+Calculating cluster 6
+Calculating cluster 7
+Calculating cluster 8
+Calculating cluster 9
+**** Job ends ****
+Mon Apr 28 05:14:44 PM EDT 2025

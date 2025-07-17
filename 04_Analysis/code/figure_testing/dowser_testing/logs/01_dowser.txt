@@ -1,0 +1,36 @@
+**** Job starts ****
+Thu May 23 04:22:32 PM EDT 2024
+**** LOCUS info ****
+User: malekrj
+Job id: 
+Job name: 
+Hostname: ai-hpcn201
+/data/vrc_bsc/Rory/Covail/04_Analysis/code/07_dowser
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+here() starts at /data/vrc_bsc/Rory/Covail
+If you are using dowser in published research please cite Hoehn K, Pybus O, Kleinstein S (2022). Phylogenetic analysis of migration, differentiation, and class switching in B cells. PLoS Computational Biology. https://doi.org/10.1371/journal.pcbi.1009885.
+Rows: 43725 Columns: 41
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (20): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+null device 
+          1 
+Error in utils::write.table(utestDF, file = here::here("04_Analysis",  : 
+  unimplemented type 'list' in 'EncodeElement'
+Calls: write.csv -> eval.parent -> eval -> eval -> <Anonymous>
+Execution halted

@@ -1,0 +1,237 @@
+**** Job starts ****
+Mon May 20 11:29:23 AM EDT 2024
+**** LOCUS info ****
+User: malekrj
+Job id: 132166
+Job name: find_bcells_all
+Hostname: ai-hpcn214
+/data/vrc_bsc/Rory/Covail/04_Analysis/code/02_dsb_normalization
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+========================================
+tidyseurat version 0.8.0
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following object is masked from ‘package:ttservice’:
+
+    plot_ly
+
+here() starts at /data/vrc_bsc/Rory/Covail
+tidyseurat says: A data frame is returned for independent data analysis.
+# A tibble: 4 × 2
+  Timepoint     n
+  <chr>     <int>
+1 Day 0     13404
+2 Day 15    17828
+3 Day 180   16552
+4 Day 90    18508
+tidyseurat says: This operation lead to duplicated cell names. A data frame is returned for independent data analysis.
+Warning message:
+Removed 6121 rows containing missing values (`geom_point()`). 
+null device 
+          1 
+tidyseurat says: This operation lead to duplicated cell names. A data frame is returned for independent data analysis.
+Number of B cells total (TRUE indicates B-Cell status): 
+
+FALSE  TRUE 
+24684 41608 
+Number of B cells per pool: 
+       
+        COV_09_13_2023_P1 COV_09_19_2023_P1 COV_09_19_2023_P2 COV_09_19_2023_P3
+  FALSE               249               768              1159               942
+  TRUE                332              2103              2625              2982
+       
+        COV_09_20_2023_P1 COV_09_20_2023_P2 COV_09_20_2023_P3 COV_09_21_2023_P1
+  FALSE               544              1709               805              1330
+  TRUE               2701              2813              1713              2311
+       
+        COV_09_21_2023_P2 COV_09_26_2023_P1 COV_09_26_2023_P2 COV_09_27_2023_P1
+  FALSE              1842              1706              1219               824
+  TRUE               3247              1715              2824              3989
+       
+        COV_09_27_2023_P2 COV_09_28_2023_P1 COV_09_28_2023_P2 COV_09_28_2023_P3
+  FALSE               989              1609              2746               423
+  TRUE               3704              1648              1737               612
+       
+        COV_10_05_2023_P1 COV_10_06_2023_P1 COV_10_06_2023_P2
+  FALSE              1596               343              3881
+  TRUE                705              1130              2717
+[1] "Reproducibility information:"
+[1] "2024-05-20 11:33:32 EDT"
+   user  system elapsed 
+240.117   1.962 246.782 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.3.0 (2023-04-21)
+ os       Rocky Linux 9.2 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/New_York
+ date     2024-05-20
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package          * version    date (UTC) lib source
+ abind              1.4-5      2016-07-21 [2] CRAN (R 4.3.0)
+ cli                3.6.2      2023-12-11 [2] CRAN (R 4.3.0)
+ cluster            2.1.6      2023-12-01 [1] CRAN (R 4.3.0)
+ codetools          0.2-19     2023-02-01 [2] CRAN (R 4.3.0)
+ colorspace         2.1-0      2023-01-23 [2] CRAN (R 4.3.0)
+ cowplot            1.1.3      2024-01-22 [2] CRAN (R 4.3.0)
+ data.table         1.15.0     2024-01-30 [2] CRAN (R 4.3.0)
+ deldir             2.0-4      2024-02-28 [1] CRAN (R 4.3.0)
+ digest             0.6.34     2024-01-11 [2] CRAN (R 4.3.0)
+ dotCall64          1.1-1      2023-11-28 [1] CRAN (R 4.3.0)
+ dplyr            * 1.1.4      2023-11-17 [2] CRAN (R 4.3.0)
+ ellipsis           0.3.2      2021-04-29 [2] CRAN (R 4.3.0)
+ fansi              1.0.6      2023-12-08 [2] CRAN (R 4.3.0)
+ farver             2.1.1      2022-07-06 [2] CRAN (R 4.3.0)
+ fastDummies        1.7.3      2023-07-06 [1] CRAN (R 4.3.0)
+ fastmap            1.1.1      2023-02-24 [2] CRAN (R 4.3.0)
+ fitdistrplus       1.1-11     2023-04-25 [1] CRAN (R 4.3.0)
+ forcats          * 1.0.0      2023-01-29 [2] CRAN (R 4.3.0)
+ future             1.33.2     2024-03-26 [1] CRAN (R 4.3.0)
+ future.apply       1.11.2     2024-03-28 [1] CRAN (R 4.3.0)
+ generics           0.1.3      2022-07-05 [2] CRAN (R 4.3.0)
+ ggplot2          * 3.4.4      2023-10-12 [2] CRAN (R 4.3.0)
+ ggrepel            0.9.5      2024-01-10 [2] CRAN (R 4.3.0)
+ ggridges           0.5.6      2024-01-23 [2] CRAN (R 4.3.0)
+ globals            0.16.3     2024-03-08 [1] CRAN (R 4.3.0)
+ glue               1.7.0      2024-01-09 [2] CRAN (R 4.3.0)
+ goftest            1.2-3      2021-10-07 [1] CRAN (R 4.3.0)
+ gridExtra          2.3        2017-09-09 [2] CRAN (R 4.3.0)
+ gtable             0.3.4      2023-08-21 [2] CRAN (R 4.3.0)
+ here             * 1.0.1      2020-12-13 [1] CRAN (R 4.3.0)
+ hms                1.1.3      2023-03-21 [2] CRAN (R 4.3.0)
+ htmltools          0.5.7      2023-11-03 [2] CRAN (R 4.3.0)
+ htmlwidgets        1.6.4      2023-12-06 [1] CRAN (R 4.3.0)
+ httpuv             1.6.15     2024-03-26 [1] CRAN (R 4.3.0)
+ httr               1.4.7      2023-08-15 [2] CRAN (R 4.3.0)
+ ica                1.0-3      2022-07-08 [1] CRAN (R 4.3.0)
+ igraph             2.0.3      2024-03-13 [1] CRAN (R 4.3.0)
+ irlba              2.3.5.1    2022-10-03 [1] CRAN (R 4.3.0)
+ jsonlite           1.8.8      2023-12-04 [2] CRAN (R 4.3.0)
+ KernSmooth         2.23-24    2024-05-17 [1] CRAN (R 4.3.0)
+ labeling           0.4.3      2023-08-29 [2] CRAN (R 4.3.0)
+ later              1.3.2      2023-12-06 [1] CRAN (R 4.3.0)
+ lattice            0.22-5     2023-10-24 [2] CRAN (R 4.3.0)
+ lazyeval           0.2.2      2019-03-15 [1] CRAN (R 4.3.0)
+ leiden             0.4.3.1    2023-11-17 [1] CRAN (R 4.3.0)
+ lifecycle          1.0.4      2023-11-07 [2] CRAN (R 4.3.0)
+ listenv            0.9.1      2024-01-29 [1] CRAN (R 4.3.0)
+ lmtest             0.9-40     2022-03-21 [1] CRAN (R 4.3.0)
+ lubridate        * 1.9.3      2023-09-27 [2] CRAN (R 4.3.0)
+ magrittr           2.0.3      2022-03-30 [2] CRAN (R 4.3.0)
+ MASS               7.3-60.0.1 2024-01-13 [2] CRAN (R 4.3.0)
+ Matrix             1.6-5      2024-01-11 [1] CRAN (R 4.3.0)
+ matrixStats        1.2.0      2023-12-11 [2] CRAN (R 4.3.0)
+ mime               0.12       2021-09-28 [2] CRAN (R 4.3.0)
+ miniUI             0.1.1.1    2018-05-18 [1] CRAN (R 4.3.0)
+ munsell            0.5.0      2018-06-12 [2] CRAN (R 4.3.0)
+ nlme               3.1-164    2023-11-27 [2] CRAN (R 4.3.0)
+ parallelly         1.37.1     2024-02-29 [1] CRAN (R 4.3.0)
+ patchwork          1.2.0      2024-01-08 [1] CRAN (R 4.3.0)
+ pbapply            1.7-2      2023-06-27 [1] CRAN (R 4.3.0)
+ pillar             1.9.0      2023-03-22 [2] CRAN (R 4.3.0)
+ pkgconfig          2.0.3      2019-09-22 [2] CRAN (R 4.3.0)
+ plotly             4.10.4     2024-01-13 [1] CRAN (R 4.3.0)
+ plyr               1.8.9      2023-10-02 [1] CRAN (R 4.3.0)
+ png                0.1-8      2022-11-29 [1] CRAN (R 4.3.0)
+ polyclip           1.10-6     2023-09-27 [1] CRAN (R 4.3.0)
+ progressr          0.14.0     2023-08-10 [1] CRAN (R 4.3.0)
+ promises           1.3.0      2024-04-05 [1] CRAN (R 4.3.0)
+ purrr            * 1.0.2      2023-08-10 [2] CRAN (R 4.3.0)
+ R6                 2.5.1      2021-08-19 [2] CRAN (R 4.3.0)
+ RANN               2.6.1      2019-01-08 [1] CRAN (R 4.3.0)
+ RColorBrewer       1.1-3      2022-04-03 [2] CRAN (R 4.3.0)
+ Rcpp               1.0.12     2024-01-09 [2] CRAN (R 4.3.0)
+ RcppAnnoy          0.0.22     2024-01-23 [1] CRAN (R 4.3.0)
+ RcppHNSW           0.6.0      2024-02-04 [1] CRAN (R 4.3.0)
+ readr            * 2.1.5      2024-01-10 [2] CRAN (R 4.3.0)
+ reshape2           1.4.4      2020-04-09 [1] CRAN (R 4.3.0)
+ reticulate         1.36.1     2024-04-22 [1] CRAN (R 4.3.0)
+ rlang              1.1.3      2024-01-10 [1] CRAN (R 4.3.0)
+ ROCR               1.0-11     2020-05-02 [1] CRAN (R 4.3.0)
+ rprojroot          2.0.4      2023-11-05 [2] CRAN (R 4.3.0)
+ RSpectra           0.16-1     2022-04-24 [1] CRAN (R 4.3.0)
+ Rtsne              0.17       2023-12-07 [1] CRAN (R 4.3.0)
+ scales             1.3.0      2023-11-28 [2] CRAN (R 4.3.0)
+ scattermore        1.2        2023-06-12 [1] CRAN (R 4.3.0)
+ sctransform        0.4.1      2023-10-19 [1] CRAN (R 4.3.0)
+ sessioninfo      * 1.2.2      2021-12-06 [1] CRAN (R 4.3.0)
+ Seurat           * 5.1.0      2024-05-10 [1] CRAN (R 4.3.0)
+ SeuratObject     * 5.0.2      2024-05-08 [1] CRAN (R 4.3.0)
+ shiny              1.8.1.1    2024-04-02 [1] CRAN (R 4.3.0)
+ sp               * 2.1-4      2024-04-30 [1] CRAN (R 4.3.0)
+ spam               2.10-0     2023-10-23 [1] CRAN (R 4.3.0)
+ spatstat.data      3.0-4      2024-01-15 [1] CRAN (R 4.3.0)
+ spatstat.explore   3.2-7      2024-03-21 [1] CRAN (R 4.3.0)
+ spatstat.geom      3.2-9      2024-02-28 [1] CRAN (R 4.3.0)
+ spatstat.random    3.2-3      2024-02-29 [1] CRAN (R 4.3.0)
+ spatstat.sparse    3.0-3      2023-10-24 [1] CRAN (R 4.3.0)
+ spatstat.utils     3.0-4      2023-10-24 [1] CRAN (R 4.3.0)
+ stringi            1.8.3      2023-12-11 [2] CRAN (R 4.3.0)
+ stringr          * 1.5.1      2023-11-14 [2] CRAN (R 4.3.0)
+ survival           3.5-8      2024-02-14 [2] CRAN (R 4.3.0)
+ tensor             1.5        2012-05-05 [1] CRAN (R 4.3.0)
+ tibble           * 3.2.1      2023-03-20 [2] CRAN (R 4.3.0)
+ tidyr            * 1.3.1      2024-01-24 [2] CRAN (R 4.3.0)
+ tidyselect         1.2.0      2022-10-10 [2] CRAN (R 4.3.0)
+ tidyseurat       * 0.8.0      2024-01-10 [1] CRAN (R 4.3.0)
+ tidyverse        * 2.0.0      2023-02-22 [2] CRAN (R 4.3.0)
+ timechange         0.3.0      2024-01-18 [2] CRAN (R 4.3.0)
+ ttservice        * 0.4.0      2023-11-01 [1] CRAN (R 4.3.0)
+ tzdb               0.4.0      2023-05-12 [2] CRAN (R 4.3.0)
+ utf8               1.2.4      2023-10-22 [2] CRAN (R 4.3.0)
+ uwot               0.2.2      2024-04-21 [1] CRAN (R 4.3.0)
+ vctrs              0.6.5      2023-12-01 [1] CRAN (R 4.3.0)
+ viridisLite        0.4.2      2023-05-02 [2] CRAN (R 4.3.0)
+ withr              3.0.0      2024-01-16 [2] CRAN (R 4.3.0)
+ xtable             1.8-4      2019-04-21 [1] CRAN (R 4.3.0)
+ zoo                1.8-12     2023-04-13 [1] CRAN (R 4.3.0)
+
+ [1] /data/home/malekrj/R/x86_64-pc-linux-gnu-library/4.3
+ [2] /data/apps/software/spack/linux-rocky9-x86_64_v3/gcc-11.3.1/r-4.3.0-a22xr47ree4bcdwtihjx4sa6zt2hgs2n/rlib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Mon May 20 11:33:33 AM EDT 2024
